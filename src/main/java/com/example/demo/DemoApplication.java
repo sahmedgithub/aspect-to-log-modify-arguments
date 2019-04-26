@@ -28,6 +28,9 @@ class Ctrl {
 	@PostMapping
 	@LogExecutionTime
 	public List<Employee> getEmp(@RequestBody List<Employee> emp) {
+
+		System.out.println(emp.toString() + " <-------------------------------------");
+
 		return emp;
 	}
 }

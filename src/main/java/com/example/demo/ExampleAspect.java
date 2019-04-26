@@ -15,8 +15,6 @@ public class ExampleAspect {
     public Object logExecutionTime(ProceedingJoinPoint joinPoint) throws Throwable {
         final long start = System.currentTimeMillis();
 
-        final Object proceed = joinPoint.proceed();
-
         if(List.class.isAssignableFrom(List.class)) {
             List<Employee> employee = List.class.cast(joinPoint.getArgs()[0]);
 
@@ -26,6 +24,10 @@ public class ExampleAspect {
             System.out.println(employee.toString());
 
         }
+
+        final Object proceed = joinPoint.proceed();
+
+
 
         final long executionTime = System.currentTimeMillis() - start;
 
