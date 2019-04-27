@@ -33,4 +33,12 @@ class Ctrl {
 
 		return emp;
 	}
+
+	@LogExecutionTime
+	@GetMapping(path = "/getviapost")
+	public List<Employee> getEmpViaPost(@RequestBody List<Employee> emp) {
+
+		System.out.println(emp.toString() + " <-------------------------------------");
+		return emp;
+	}
 }
